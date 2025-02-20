@@ -12,6 +12,8 @@ def load_model(model_path, img_size=64, timesteps=1000):
     model.load_state_dict(checkpoint['model_state_dict'])
     return model
 
+model=load_model("checkpoints/final_model.pt")
+
 def show_images(images, title="Generated Images"):
     images = (images + 1) / 2  # Denormalize
     images = images.clamp(0, 1)
@@ -24,3 +26,6 @@ def show_images(images, title="Generated Images"):
         plt.axis('off')
     plt.suptitle(title)
     plt.show()
+
+samples = model.sample(n_samples=8)
+show_images(samples)
