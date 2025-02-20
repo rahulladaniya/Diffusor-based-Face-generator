@@ -30,4 +30,6 @@ class FaceDataModule(pl.LightningDataModule):
             pin_memory=True
         )
     
-obj_facedatamodule=FaceDataModule()
+def obj_facedatamodule(data_dir, img_size=64, batch_size=8):
+    print(data_dir,img_size,batch_size)
+    return FaceDataModule(data_dir, img_size, batch_size)

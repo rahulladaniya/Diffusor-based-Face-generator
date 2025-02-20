@@ -6,9 +6,9 @@ from facedatamodule import obj_facedatamodule
 from diffuisonmodel import obj_diffusionmodel
 
 def train_model(data_dir, img_size=64, batch_size=8, max_epochs=100, checkpoint_dir='checkpoints'):
-    
+
     os.makedirs(checkpoint_dir, exist_ok=True)
-    
+    print("enter")
     data_module = obj_facedatamodule(
         data_dir,
         img_size=img_size,
@@ -71,10 +71,10 @@ def train_model(data_dir, img_size=64, batch_size=8, max_epochs=100, checkpoint_
 
 if __name__ == "__main__":
     # Set parameters
-    DATA_DIR = "/content/img_align_celeba"  # Update this path to your dataset location
-    IMG_SIZE = 256
-    BATCH_SIZE = 16
-    MAX_EPOCHS = 30
+    DATA_DIR = "img_align_celeba"  # Update this path to your dataset location
+    IMG_SIZE = 64
+    BATCH_SIZE = 8
+    MAX_EPOCHS = 1
 
     # Verify data directory exists
     if not os.path.exists(DATA_DIR):

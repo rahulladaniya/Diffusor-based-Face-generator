@@ -7,4 +7,4 @@ img_align_celeba/
 lightning_logs
 lightning_logs/
 celeba.zip
-
+__pycache__

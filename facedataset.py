@@ -22,4 +22,5 @@ class FaceDataset(Dataset):
         return image
     
 
-obj_facedataset=FaceDataset()
+def obj_facedataset(root_dir, transform=None):
+    return FaceDataset(root_dir, transform)
