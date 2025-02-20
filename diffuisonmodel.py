@@ -19,7 +19,7 @@ class DiffusionModel(pl.LightningModule):
         self.register_buffer('alpha', alpha)
         self.register_buffer('alpha_hat', alpha_hat)
 
-        self.model = obje_simpleunet()
+        self.model = obje_simpleunet
 
     def cosine_beta_schedule(self, timesteps, s=0.008):
         steps = torch.arange(timesteps + 1, dtype=torch.float32) / timesteps
@@ -94,4 +94,5 @@ class DiffusionModel(pl.LightningModule):
         self.train()
         return x
 
-obj_diffusionmodel=DiffusionModel()
+def obj_diffusionmodel(img_size=64, timesteps=1000):
+    return DiffusionModel(img_size, timesteps)

@@ -16,4 +16,5 @@ class SinusoidalPositionEmbeddings(nn.Module):
         embeddings = torch.cat((embeddings.sin(), embeddings.cos()), dim=-1)
         return embeddings
     
-obj_SinusoidalPostionEmbeddings=SinusoidalPositionEmbeddings()
+def obj_SinusoidalPostionEmbeddings(time_emb_dim):
+    return SinusoidalPositionEmbeddings(time_emb_dim)

@@ -8,3 +8,4 @@ lightning_logs
 lightning_logs/
 celeba.zip
 __pycache__
+__pycache__/
